@@ -3,7 +3,7 @@
 
 <h3>重新fork分支的原因</h3>
 <ol>
-<li>原版的canal单instance只支持单client独占消费，不支持多client并行消费，严重限制了水平扩展性，这个分支旨在探索增加partition的概念(借鉴的kafka)来提高扩展性，增加单instance的吞吐率</li>
+<li>原版的canal单instance只支持单client独占消费，不支持多client并行消费，严重限制了水平扩展性，这个分支旨在探索增加partition的概念(借鉴的kafka)来提高扩展性，增加单instance的吞吐率。</li>
 </ol>
 <h3>最新更新</h3>
 <ol>
