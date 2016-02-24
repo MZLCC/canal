@@ -1,33 +1,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.alibaba.otter</groupId>
-		<artifactId>canal</artifactId>
+		<groupId>com.qunar.flight.itts</groupId>
+		<artifactId>mcanal</artifactId>
 		<version>1.0.22-SNAPSHOT</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<artifactId>canal.instance.core</artifactId>
+	<artifactId>mcanal.instance.core</artifactId>
 	<packaging>jar</packaging>
 	<name>canal instance core module for otter ${project.version}</name>
 	<dependencies>
 		<dependency>
-			<groupId>com.alibaba.otter</groupId>
-			<artifactId>canal.common</artifactId>
+			<groupId>com.qunar.flight.itts</groupId>
+			<artifactId>mcanal.common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.alibaba.otter</groupId>
-			<artifactId>canal.store</artifactId>
+			<groupId>com.qunar.flight.itts</groupId>
+			<artifactId>mcanal.store</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.alibaba.otter</groupId>
-			<artifactId>canal.meta</artifactId>
+			<groupId>com.qunar.flight.itts</groupId>
+			<artifactId>mcanal.meta</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.alibaba.otter</groupId>
-			<artifactId>canal.parse</artifactId>
+			<groupId>com.qunar.flight.itts</groupId>
+			<artifactId>mcanal.parse</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
