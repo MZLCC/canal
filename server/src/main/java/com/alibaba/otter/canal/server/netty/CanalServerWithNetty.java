@@ -103,5 +103,8 @@ public class CanalServerWithNetty extends AbstractCanalLifeCycle implements Cana
     public void setPort(int port) {
         this.port = port;
     }
-
+    
+    public void setEmbeddedServer(CanalServerWithEmbedded embeddedServer) {
+        this.embeddedServer = embeddedServer;
+    }
 }
