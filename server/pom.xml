@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>mcanal.server</artifactId>
 	<packaging>jar</packaging>
-	<name>canal server module for otter ${project.version}</name>
+	<name>mcanal server module for otter ${project.version}</name>
 	<dependencies>
 		<dependency>
 			<groupId>com.qunar.flight.itts</groupId>

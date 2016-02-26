@@ -9,7 +9,7 @@
 	<groupId>com.qunar.flight.itts</groupId>
 	<artifactId>mcanal.parse.driver</artifactId>
 	<packaging>jar</packaging>
-	<name>canal driver module for otter ${project.version}</name>
+	<name>mcanal driver module for otter ${project.version}</name>
 	<dependencies>
 		<dependency>
 			<groupId>com.qunar.flight.itts</groupId>

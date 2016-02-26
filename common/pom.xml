@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>mcanal.common</artifactId>
 	<packaging>jar</packaging>
-	<name>canal common module for otter ${project.version}</name>
+	<name>mcanal common module for otter ${project.version}</name>
 	<url>http://b2b-doc.alibaba-inc.com/display/opentech/Otter</url>
 	<dependencies>
 		<!-- zk -->
@@ -33,6 +33,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring</artifactId>
+			<exclusions>
+				<exclusion>
+					  <groupId>commons-logging</groupId>
+  					  <artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>

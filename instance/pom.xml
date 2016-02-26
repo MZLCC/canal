@@ -9,7 +9,7 @@
 	<groupId>com.qunar.flight.itts</groupId>
 	<artifactId>mcanal.instance</artifactId>
 	<packaging>pom</packaging>
-	<name>canal instance module for otter ${project.version}</name>
+	<name>mcanal instance module for otter ${project.version}</name>
 	
 	<modules>
 		<module>core</module>

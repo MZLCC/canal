@@ -9,7 +9,7 @@
 	<groupId>com.qunar.flight.itts</groupId>
 	<artifactId>mcanal.protocol</artifactId>
 	<packaging>jar</packaging>
-	<name>canal protocol module for otter ${project.version}</name>
+	<name>mcanal protocol module for otter ${project.version}</name>
 	<url>http://b2b-doc.alibaba-inc.com/display/opentech/Otter</url>
 
 	<dependencies>
