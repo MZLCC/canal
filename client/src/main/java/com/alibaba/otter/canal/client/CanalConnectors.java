@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.alibaba.otter.canal.client.impl.ClusterCanalConnector;
 import com.alibaba.otter.canal.client.impl.ClusterNodeAccessStrategy;
+import com.alibaba.otter.canal.client.impl.MClusterCanalConnector;
 import com.alibaba.otter.canal.client.impl.SimpleCanalConnector;
 import com.alibaba.otter.canal.client.impl.SimpleNodeAccessStrategy;
 import com.alibaba.otter.canal.common.zookeeper.ZkClientx;
@@ -64,6 +65,16 @@ public class CanalConnectors {
     public static CanalConnector newClusterConnector(String zkServers, String destination, String username,
                                                      String password) {
         ClusterCanalConnector canalConnector = new ClusterCanalConnector(username,
+            password,
+            destination,
+            new ClusterNodeAccessStrategy(destination, ZkClientx.getZkClient(zkServers)));
+        canalConnector.setSoTimeout(30 * 1000);
+        return canalConnector;
+    }
+    
+    public static CanalConnector newMClusterConnector(String zkServers, String destination, String username,
+                                                     String password) {
+        MClusterCanalConnector canalConnector = new MClusterCanalConnector(username,
             password,
             destination,
             new ClusterNodeAccessStrategy(destination, ZkClientx.getZkClient(zkServers)));

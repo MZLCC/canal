@@ -18,8 +18,8 @@ public class ClusterCanalClientTest extends AbstractCanalClientTest {
     }
 
     public static void main(String args[]) {
-        String destination = "example";
-
+        String destination = "tade";
+        String sub=".*.ota_return_policy,.*.ota_oneway_policy,.*.common_oneway_policy,.*.common_return_policy,.*.ota_oneway_transfer_policy,.*.ota_return_transfer_policy";
         // 基于固定canal server的地址，建立链接，其中一台server发生crash，可以支持failover
         // CanalConnector connector = CanalConnectors.newClusterConnector(
         // Arrays.asList(new InetSocketAddress(
@@ -28,7 +28,7 @@ public class ClusterCanalClientTest extends AbstractCanalClientTest {
         // "stability_test", "", "");
 
         // 基于zookeeper动态获取canal server的地址，建立链接，其中一台server发生crash，可以支持failover
-        CanalConnector connector = CanalConnectors.newClusterConnector("127.0.0.1:2181", destination, "", "");
+        CanalConnector connector = CanalConnectors.newClusterConnector("zk.dev.corp.qunar.com:2181", destination, "", "");
 
         final ClusterCanalClientTest clientTest = new ClusterCanalClientTest(destination);
         clientTest.setConnector(connector);

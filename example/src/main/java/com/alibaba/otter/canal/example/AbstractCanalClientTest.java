@@ -3,6 +3,7 @@ package com.alibaba.otter.canal.example;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.SystemUtils;
 import org.slf4j.Logger;
@@ -62,7 +63,9 @@ public class AbstractCanalClientTest {
         transaction_format = SEP + "================> binlog[{}:{}] , executeTime : {} , delay : {}ms" + SEP;
 
     }
-
+    
+    String sub=".*.ota_return_policy,.*.ota_oneway_policy,.*.common_oneway_policy,.*.common_return_policy,.*.ota_oneway_transfer_policy,.*.ota_return_transfer_policy";
+    
     public AbstractCanalClientTest(String destination){
         this(destination, null);
     }
@@ -108,9 +111,10 @@ public class AbstractCanalClientTest {
             try {
                 MDC.put("destination", destination);
                 connector.connect();
-                connector.subscribe();
+                logger.info("init ok");
+                connector.subscribe(sub);
                 while (running) {
-                    Message message = connector.getWithoutAck(batchSize); // 获取指定数量的数据
+                    Message message = connector.getWithoutAck(batchSize, new Long(1), TimeUnit.SECONDS); // 获取指定数量的数据
                     long batchId = message.getId();
                     int size = message.getEntries().size();
                     if (batchId == -1 || size == 0) {
@@ -119,10 +123,11 @@ public class AbstractCanalClientTest {
                         // } catch (InterruptedException e) {
                         // }
                     } else {
-                        printSummary(message, batchId, size);
-                        printEntry(message.getEntries());
+                        /*printSummary(message, batchId, size);
+                        printEntry(message.getEntries());*/
+                        
                     }
-
+                    System.out.println("entry size:"+size);
                     connector.ack(batchId); // 提交确认
                     // connector.rollback(batchId); // 处理失败, 回滚数据
                 }

@@ -78,7 +78,7 @@
 							<descriptors>
 								<descriptor>${basedir}/src/main/assembly/dev.xml</descriptor>
 							</descriptors>
-							<finalName>canal</finalName>
+							<finalName>mcanal</finalName>
 							<outputDirectory>${project.build.directory}</outputDirectory>
 						</configuration>
 					</plugin>
